@@ -13,10 +13,11 @@ body {
     color: #ffffff;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    overflow: hidden; 
+    min-height: 100vh;
+    overflow-x: hidden; 
 }
 
+/* DATORA IZKĀRTOJUMS */
 .app-layout {
     display: flex;
     height: 100vh;
@@ -117,7 +118,6 @@ button {
 .box {
     width: 100%;
     height: 100%;
-    aspect-ratio: 1 / 1;
 }
 
 .fizz { background-color: var(--fizz-color); }
@@ -129,76 +129,67 @@ button {
 }
 .none { background-color: var(--none-color); }
 
+/* ======================================================
+   MOBILĀ VERSIJA - STRIKTĀ CENTRĒŠANA
+   ====================================================== */
 @media (max-width: 768px) {
     body {
         overflow-y: auto; 
     }
 
     .app-layout {
-        flex-direction: column;
-        height: auto;
+        display: block; /* Nomainīts no flex uz block drošākai centrēšanai */
+        width: 100%;
     }
 
     .sidebar {
         width: 100%;
         min-width: 100%;
-        padding: 12px; 
-        gap: 10px; 
+        padding: 20px;
+        border-right: none;
         border-bottom: 1px solid #222;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrē visus iekšējos elementus */
     }
 
     h1 {
-        font-size: 1rem; 
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
     }
 
     .controls {
+        width: 100%;
+        max-width: 450px; /* Ierobežo platumu lielākiem telefoniem/planšetēm */
         display: grid;
-        grid-template-columns: 1fr 1fr; 
-        gap: 8px;
-    }
-
-    .input-group {
-        gap: 4px;
-    }
-
-    .input-group label {
-        font-size: 0.65rem; 
-    }
-
-    input {
-        padding: 6px; 
-        font-size: 0.9rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 0 auto; /* Nocentrē pašu gridu */
     }
 
     .actions {
         grid-column: span 2;
+        display: flex;
         flex-direction: row;
-        gap: 8px;
-        margin-top: 5px;
-    }
-
-    button {
-        padding: 8px;
-        font-size: 0.8rem;
+        gap: 10px;
+        width: 100%;
     }
 
     .canvas-area {
-        padding: 10px;
+        display: block; /* Mainām uz block */
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start; 
+        padding: 20px 0;
+        text-align: center; /* Nodrošina inline-block elementu centrēšanu */
     }
 
     #container {
+        display: grid; /* Režģim jāpaliek grid */
         width: 95vw;
         height: 95vw;
-        max-width: 95vw;
-        max-height: 95vw;
-        margin: 0 auto;
-        aspect-ratio: 1 / 1;
+        max-width: 500px; /* Ierobežojums planšetēm */
+        max-height: 500px;
+        margin: 0 auto; /* Šis ir kritiskais punkts centrēšanai */
+        float: none;
     }
 }
