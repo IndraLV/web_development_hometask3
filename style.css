@@ -131,61 +131,74 @@ button {
 
 @media (max-width: 768px) {
     body {
-        overflow: auto;
+        overflow-y: auto; 
     }
 
     .app-layout {
         flex-direction: column;
         height: auto;
-        min-height: 100vh;
     }
 
     .sidebar {
         width: 100%;
         min-width: 100%;
-        padding: 15px;
-        box-sizing: border-box;
-        border-right: none;
+        padding: 12px; 
+        gap: 10px; 
         border-bottom: 1px solid #222;
-        gap: 15px;
+        box-sizing: border-box;
     }
 
     h1 {
-        font-size: 1.2rem;
+        font-size: 1rem; 
         text-align: center;
+        margin-bottom: 5px;
     }
 
     .controls {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr 1fr; 
+        gap: 8px;
+    }
+
+    .input-group {
+        gap: 4px;
+    }
+
+    .input-group label {
+        font-size: 0.65rem; 
+    }
+
+    input {
+        padding: 6px; 
+        font-size: 0.9rem;
     }
 
     .actions {
-        grid-column: span 2; 
+        grid-column: span 2;
         flex-direction: row;
-        gap: 10px;
+        gap: 8px;
+        margin-top: 5px;
     }
 
-    .actions button {
-        flex: 1;
-        padding: 10px;
-    }
-
-    hr {
-        display: none; 
+    button {
+        padding: 8px;
+        font-size: 0.8rem;
     }
 
     .canvas-area {
-        padding: 10px 0;
+        padding: 10px;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; 
     }
 
     #container {
-        width: 98vw;
-        height: 98vw;
-        max-width: 98vw;
-        max-height: 98vw;
+        width: 95vw;
+        height: 95vw;
+        max-width: 95vw;
+        max-height: 95vw;
         margin: 0 auto;
+        aspect-ratio: 1 / 1;
     }
 }
