@@ -24,7 +24,6 @@ body {
     width: 100vw;
 }
 
-/* DATORA VERSIJA */
 .sidebar {
     width: 260px;
     min-width: 260px;
@@ -55,7 +54,7 @@ input {
     display: flex; 
     flex-direction: column; 
     gap: 12px; 
-    margin-top: 10px; /* Šis aizstāj HR un nerāda punktus */
+    margin-top: 10px; 
 }
 
 button {
@@ -94,53 +93,62 @@ button {
 .fizzbuzz { background-color: var(--fizzbuzz-color); box-shadow: 0 0 10px var(--fizzbuzz-color); z-index: 2; }
 .none { background-color: var(--none-color); }
 
-/* ======================================================
-   MOBILĀ VERSIJA
-   ====================================================== */
 @media (max-width: 768px) {
-    body { overflow-y: auto; }
+    body {
+        overflow-y: auto !important;
+        height: auto !important;
+    }
 
     .app-layout {
-        flex-direction: column;
-        height: auto;
-        width: 100%;
-        align-items: center;
+        flex-direction: column !important;
+        height: auto !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     .sidebar {
         width: 100% !important;
-        padding: 15px;
-        border-right: none;
-        border-bottom: 1px solid #222;
-        align-items: center;
+        min-width: 100% !important;
+        height: auto !important;
+        padding: 15px !important;
+        border-right: none !important;
+        border-bottom: 1px solid #222 !important;
+        flex-shrink: 0 !important; 
     }
 
     .controls {
-        width: 95vw !important;
+        width: 92vw !important;
         max-width: 500px !important;
         display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
     }
 
     .actions {
-        grid-column: span 2;
+        grid-column: span 2 !important;
         flex-direction: row !important;
         display: flex !important;
-        margin-top: 5px;
     }
 
     .canvas-area {
         width: 100% !important;
-        padding: 15px 0 !important;
+        height: auto !important;
+        padding: 20px 0 !important;
         display: flex !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
     }
 
     #container {
-        width: 95vw !important; 
-        height: 95vw !important;
-        max-width: 95vw !important; 
-        max-height: 95vw !important;
+        display: grid !important;
+        width: 92vw !important;
+        height: 92vw !important;
+        min-width: 92vw !important;
+        min-height: 92vw !important;
+        max-width: 500px !important; 
+        max-height: 500px !important;
         margin: 0 auto !important;
+        background-color: var(--none-color) !important;
     }
 }
