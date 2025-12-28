@@ -58,6 +58,7 @@ const generatePattern = () => {
     container.appendChild(fragment);
 };
 
+
 btnGenerate.addEventListener('click', generatePattern);
 btnClear.addEventListener('click', clearContainer);
 
