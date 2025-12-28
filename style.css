@@ -17,7 +17,6 @@ body {
     overflow-x: hidden; 
 }
 
-/* DATORA IZKĀRTOJUMS */
 .app-layout {
     display: flex;
     height: 100vh;
@@ -129,16 +128,13 @@ button {
 }
 .none { background-color: var(--none-color); }
 
-/* ======================================================
-   MOBILĀ VERSIJA - STRIKTĀ CENTRĒŠANA
-   ====================================================== */
 @media (max-width: 768px) {
     body {
         overflow-y: auto; 
     }
 
     .app-layout {
-        display: block; /* Nomainīts no flex uz block drošākai centrēšanai */
+        display: block;
         width: 100%;
     }
 
@@ -151,7 +147,7 @@ button {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centrē visus iekšējos elementus */
+        align-items: center; 
     }
 
     h1 {
@@ -161,11 +157,11 @@ button {
 
     .controls {
         width: 100%;
-        max-width: 450px; /* Ierobežo platumu lielākiem telefoniem/planšetēm */
+        max-width: 450px; 
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
-        margin: 0 auto; /* Nocentrē pašu gridu */
+        margin: 0 auto;
     }
 
     .actions {
@@ -177,19 +173,19 @@ button {
     }
 
     .canvas-area {
-        display: block; /* Mainām uz block */
+        display: block; 
         width: 100%;
         padding: 20px 0;
-        text-align: center; /* Nodrošina inline-block elementu centrēšanu */
+        text-align: center; 
     }
 
     #container {
-        display: grid; /* Režģim jāpaliek grid */
+        display: grid; 
         width: 95vw;
         height: 95vw;
-        max-width: 500px; /* Ierobežojums planšetēm */
+        max-width: 500px; 
         max-height: 500px;
-        margin: 0 auto; /* Šis ir kritiskais punkts centrēšanai */
+        margin: 0 auto; 
         float: none;
     }
 } 
