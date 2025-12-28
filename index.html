@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz Pixel Art</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <header class="sidebar">
+            <h1>FizzBuzz Art</h1>
+            
+            <div class="controls">
+                <div class="input-group">
+                    <label for="startVal">Start</label>
+                    <input type="number" id="startVal" value="1" min="1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="endVal">End (max 100k)</label>
+                    <input type="number" id="endVal" value="10000" min="1" max="100000">
+                </div>
+                
+                <div class="input-group">
+                    <label for="fizzVal">Fizz (blue)</label>
+                    <input type="number" id="fizzVal" value="3" min="1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="buzzVal">Buzz (green)</label>
+                    <input type="number" id="buzzVal" value="5" min="1">
+                </div>
+                
+                <hr>
+                
+                <div class="actions">
+                    <button id="btnGenerate">Draw</button>
+                    <button id="btnClear">Clear</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="canvas-area">
+            <div id="container"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
